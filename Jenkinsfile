@@ -22,7 +22,8 @@ pipeline {
     }
      stage( 'deploy' ){
       steps {
-          sh 'docker build $registry' 
+          sh 'docker build -t myimage' + $registryCredential
+          sh 'docher push $registry' 
       }
     }
   }
