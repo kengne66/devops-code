@@ -27,11 +27,5 @@ pipeline {
         }
       }
     }
-     stage( 'docker' ){
-      steps {
-        echo "image steps"
-        sleep 10
-      }
-    }
   }
 }
