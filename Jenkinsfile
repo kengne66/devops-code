@@ -23,7 +23,7 @@ pipeline {
      stage( 'deploy' ){
       steps {
         script {
-          docker.build registry + ":$BUILD_NUMBER"
+          sh 'docker build registry + ":$BUILD_NUMBER"'
         }
       }
     }
