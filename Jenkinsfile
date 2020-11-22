@@ -6,6 +6,7 @@ pipeline {
   environment {
     registry="kengne/devops-pipeline"
     registryCredential="DockerID"
+    dockerImage = ''
   }
   stages {
     stage( 'Build' ){
@@ -21,9 +22,11 @@ pipeline {
       }
     }
      stage( 'deploy' ){
-      steps {
-        sh 'docker build kengne'
-          sh 'docher push $registry' 
+      script {
+         docker.withRegistry( '', registryCredential ) {
+          dockerImage.push("$BUILD_NUMBER")
+          dockerImage.push('latest')
+        }  
       }
     }
   }
