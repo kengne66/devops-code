@@ -22,7 +22,7 @@ pipeline {
     }
      stage( 'deploy' ){
       steps {
-        sh 'docker build myimage'
+        sh 'docker build kengne'
           sh 'docher push $registry' 
       }
     }
