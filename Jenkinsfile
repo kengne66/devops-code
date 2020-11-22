@@ -4,8 +4,8 @@ pipeline {
     maven 'M2_HOME'
   }
   environment {
-    registry="kengne/devop-pipeline"
-    registryCredential="DockerID1"
+    registry="kengne/devops-pipeline"
+    registryCredential="DockerID"
   }
   stages {
     stage( 'Build' ){
