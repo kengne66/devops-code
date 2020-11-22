@@ -4,8 +4,8 @@ pipeline {
     maven 'M2_HOME'
   }
   environment {
-    registry="kengne/devops-pipeline"
-    registryCredential="DockerID"
+    imagename = "kengne/devops-pipeline"
+    registryCredential = "DockerID"
     dockerImage = ''
   }
   stages {
@@ -20,7 +20,14 @@ pipeline {
       steps {
        sh 'mvn test'
       }
-    }
+     }
+     stage('Building image') {
+      steps{
+        script {
+          dockerImage = docker.build imagename
+        }
+      }
+     }
      stage( 'deploy' ){
       steps {
         script {
