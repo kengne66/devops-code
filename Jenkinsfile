@@ -28,7 +28,6 @@ pipeline {
           dockerImage.push('latest')
         }
       }
-      }
     }
   }
 }
