@@ -5,7 +5,7 @@ pipeline {
   }
   environment {
     imagename = "kengne/devops-pipeline"
-    registryCredential = "DockerID"
+    registryCredential = "DockerID1"
     dockerImage = ''
   }
   stages {
